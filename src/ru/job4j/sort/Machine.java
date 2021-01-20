@@ -7,17 +7,17 @@ public class Machine {
         int[] coins = {10, 5, 2, 1};
         int[] rsl = new int[100];
         int size = 0;
-        int vuelto = (money - price);
-        if (vuelto > 0) {
-            for (int i = 0, j = 0; i < coins.length; i++, size++) {
-                while (vuelto - i > i) {
-                    rsl[j] = coins[i];
-                    vuelto -= rsl[j];
-                    j++;
-                    i++;
-                }
+        int change = (money - price);
+
+        for (int i = 0, j = 0; i < coins.length; i++) {
+            while (change >= coins[i]) {
+                rsl[j] = coins[i];
+                change -= rsl[j];
+                j++;
+                size++;
             }
         }
+
         return Arrays.copyOf(rsl, size);
     }
 }
