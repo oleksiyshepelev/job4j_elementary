@@ -19,7 +19,6 @@ public class Converter {
         int outDol = Converter.rubleToDollar(inRuToDol);
         boolean passedEu = expectedEu == outEu;
         boolean passedDol = expectedDol == outDol;
-
         System.out.println("140 rubles are 2 euros. Test result : " + passedEu);
         System.out.println("120 rubles are 2 dollars. Test result : " + passedDol);
     }
